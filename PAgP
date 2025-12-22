@@ -1,0 +1,15 @@
+2 swicth 2 connection
+
+enable
+configure terminal
+interface range fa0/1 - 2
+channel-group 1 mode desirable
+exit
+
+enable
+configure terminal
+interface range fa0/1 - 2
+channel-group 1 mode desirable
+exit
+
+show etherchannel summary
