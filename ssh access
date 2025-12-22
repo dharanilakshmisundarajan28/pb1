@@ -1,0 +1,32 @@
+pc 
+IP Address : 192.168.10.10
+Subnet Mask: 255.255.255.0
+Gateway    : 192.168.10.1
+_______________________________
+switch cli
+
+enable
+configure terminal
+interface vlan 1
+ip address 192.168.10.2 255.255.255.0
+no shutdown
+exit
+hostname MySwitch
+ip default-gateway 192.168.10.1
+ip domain-name console.local
+username admin secret cisco123
+crypto key generate rsa
+1024
+ip ssh version 2
+line vty 0 15
+login local
+transport input ssh
+exit
+____________________________________
+PC → Command Prompt
+
+ssh -l admin 192.168.10.2
+cisco123
+_________________________
+switch
+show ssh
