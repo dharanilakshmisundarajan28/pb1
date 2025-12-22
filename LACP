@@ -1,0 +1,14 @@
+2 switch 2 connection
+
+enable
+configure terminal
+interface range fa0/1 - 2
+channel-group 1 mode active
+exit
+
+enable
+configure terminal
+interface range fa0/1 - 2
+channel-group 1 mode active
+exit
+show etherchannel summary
